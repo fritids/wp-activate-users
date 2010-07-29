@@ -1,4 +1,4 @@
-=== WP Database Optimizer ===
+=== WP Activate Users ===
 Contributors: matthew price
 Donate link: 
 Tags: activate, users, buddypress
