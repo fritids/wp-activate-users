@@ -18,7 +18,7 @@ This plugin is for BuddyPress and allows you to manually activate users who have
 
 1. Upload `wp_activate_users.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Modify settings under the tools menu using "WP Database Optimization"
+3. Modify settings under the users menu using "WP Activate Users"
 
 == Frequently Asked Questions ==
 
