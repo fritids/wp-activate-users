@@ -36,7 +36,6 @@ function readOnlyCheckBox() {
    return false;
 }
 </script>
-}
 <?
 }
 
