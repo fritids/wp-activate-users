@@ -69,7 +69,8 @@ $stripe = 1;
 	echo $stripe % 2 == 0 ? '<tr>' : '<tr class="alternate">';
 	echo "<td>" . $user->user_registered . "</td><td>" . $user->user_login . "</td><td><a href=\"mailto:" . $user->user_email . "\">" . $user->user_email . "</a></td><td>" . $user->display_name . "</td>";
 	?>
-	<td><img src="activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<? echo $user->ID; ?>');"><br>
+	<? $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
+	<td><img src="<? echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<? echo $user->ID; ?>');"><br>
 	<div id="activator<? echo $user->ID; ?>" style="display: none;">
 		<form action="?action=activate-user" method="post">
 			<input type="radio" value="0" name="activate">Activate <input type="radio" value="2" name="activate"> Cancel<br>
