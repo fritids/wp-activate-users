@@ -22,13 +22,6 @@ This plugin is for BuddyPress and allows you to manually activate users who have
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
 
 == Screenshots ==
 
