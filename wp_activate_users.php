@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Activate Users
-Plugin URI: http://countingrows.com
+Plugin URI: http://countingrows.com/wp-activate-user/
 Description: For BuddyPress: Shows users who have not activated their account
 Version: 1.0
 Author: Matthew Price
