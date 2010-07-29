@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Activate Users
 Plugin URI: http://countingrows.com
-Description: Shows users who have not activated their account
+Description: For BuddyPress: Shows users who have not activated their account
 Version: 1.0
 Author: Matthew Price
 Author URI: http://countingrows.com
