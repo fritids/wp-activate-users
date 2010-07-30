@@ -25,8 +25,10 @@ This plugin is for BuddyPress and BuddyPress MU Installs and allows you to manua
 
 == Screenshots ==
 
-1. This is a screenshot is the overview page inside the users memnu
-2. This is a screenshot is what it looks like after you activate a user
+1. BuudyPress MU This is a screenshot is the overview page inside the users memnu
+2. BuddyPress MU This is a screenshot is what it looks like after you activate a user
+3. BuudyPress NON-MU This is a screenshot is the overview page inside the users memnu
+4. BuddyPress NON-MU This is a screenshot is what it looks like after you activate a user
 
 == Changelog ==
 
