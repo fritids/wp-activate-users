@@ -6,11 +6,11 @@ Requires at least: 2.0.2
 Tested up to: WordPress 3.0 / BuddyPress 1.2.4.1
 Stable tag: Trunk
 
-This plugin is for BuddyPress and BuddyPress MU Installs and allows you to manually activate users who have not activated their account via the email link.  This can be used if the email doesn't get to the user for any reason...ie spam filtering, email host etc.  It places a menu in the Users menu in the wp-admin area of your site.
+This plugin is for BuddyPress and BuddyPress MU Installs and allows you to manually activate users who have not activated their account via the email link.  This can be used if the email doesn't get to the user for any reason...ie spam filtering, email host etc.  It places a menu in the Users menu in the wp-admin area of your site.  This is handy as you like the activation email for anti-spam, but this gives you the option to manually activate users who are having difficulty signing up for whatever reason.
 
 == Description ==
 
-This plugin is for BuddyPress and BuddyPress MU Installs and allows you to manually activate users who have not activated their account via the email link.  This can be used if the email doesn't get to the user for any reason...ie spam filtering, email host etc.  It places a menu in the Users menu in the wp-admin area of your site.
+This plugin is for BuddyPress and BuddyPress MU Installs and allows you to manually activate users who have not activated their account via the email link.  This can be used if the email doesn't get to the user for any reason...ie spam filtering, email host etc.  It places a menu in the Users menu in the wp-admin area of your site.  This is handy as you like the activation email for anti-spam, but this gives you the option to manually activate users who are having difficulty signing up for whatever reason.
 
 
 == Installation ==
