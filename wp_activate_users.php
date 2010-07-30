@@ -73,18 +73,11 @@ $user_activated_mu = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}signups WH
 			echo "<td>" . $user->user_registered . "</td><td>" . $user->user_login . "</td><td><a href=\"mailto:" . $user->user_email . "\">" . $user->user_email . "</a></td><td>" . $user->display_name . "</td>"; 
 	?>
 	<? $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
-	<td><img src="<? echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<? echo $user->ID; ?>');"><br>
+	<td width="100"><img src="<? echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<? echo $user->ID; ?>');"><br>
 	<div id="activator<? echo $user->ID; ?>" style="display: none;">
 		<form action="?action=activate-user" method="post">
-
-		    <?
-   			$table_name = $wpdb->prefix . "signups";
-   			if($wpdb->get_var("show tables like '$table_name'") == $table_name) {
-  	 		?>
-  	 		<input type="radio" value="1" name="activate">Activate <input type="radio" value="0" name="activate"> Cancel<br>			
-  	 		<? } else { ?>
-			<input type="radio" value="0" name="activate">Activate <input type="radio" value="2" name="activate"> Cancel<br>
-			<? } ?>
+			<input type="radio" value="0" name="activate">Activate<div style="clear: both;"></div>
+			<input type="radio" value="2" name="activate"> Cancel<br>
 			<input type="hidden" name="id" value="<? echo $user->ID; ?>">
 			<input type="submit" value="Confirm">
 		</form>
