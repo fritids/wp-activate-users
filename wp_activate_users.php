@@ -3,7 +3,7 @@
 Plugin Name: WP Activate Users
 Plugin URI: http://countingrows.com/wp-activate-user/
 Description: For BuddyPress: Shows users who have not activated their account
-Version: 1.1
+Version: 1.1.1
 Author: Matthew Price
 Author URI: http://countingrows.com
 License: GPL2
@@ -36,7 +36,7 @@ function readOnlyCheckBox() {
    return false;
 }
 </script>
-<?
+<?php
 }
 
 function wp_activate_users() {
@@ -47,16 +47,16 @@ $user_mu = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}signups WHERE active
 ?>
 <div class="wrap">
 <h2>Users Who Have Not Activated Their Account</h2>
-Total: <? echo $wpdb->num_rows; ?><br><br>	
+Total: <?php echo $wpdb->num_rows; ?><br><br>	
 
-<? if ($_GET['user'] != '') { 
+<?php if ($_GET['user'] != '') { 
 $user = $_GET['user'];
 $user_activated = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}users WHERE ID = '$user'");
 $user_activated_mu = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}signups WHERE user_login = '$user'");
 
 ?>
-<div id="message" class="updated">User: <? echo $user_activated[0]->display_name . $user_activated_mu[0]->user_login; ?> has been activated.</div>
-<? } ?>
+<div id="message" class="updated">User: <?php echo $user_activated[0]->display_name . $user_activated_mu[0]->user_login; ?> has been activated.</div>
+<?php } ?>
 <table class="widefat" cellspacing="0">
 	<thead>
 		<tr class="thead">
@@ -67,22 +67,22 @@ $user_activated_mu = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}signups WH
 			<th scope="col" id="activate" class="manage-column">Activate</th>
 		</tr>
 	</thead>
-<?			
+<?php			
 	foreach ($users as $user) {
 	echo '<tr class="alternate">';
 			echo "<td>" . $user->user_registered . "</td><td>" . $user->user_login . "</td><td><a href=\"mailto:" . $user->user_email . "\">" . $user->user_email . "</a></td><td>" . $user->display_name . "</td>"; 
 	?>
-	<? $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
-	<td width="100"><img src="<? echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<? echo $user->ID; ?>');"><br>
-	<div id="activator<? echo $user->ID; ?>" style="display: none;">
+	<?php $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
+	<td width="100"><img src="<?php echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activator<?php echo $user->ID; ?>');"><br>
+	<div id="activator<?php echo $user->ID; ?>" style="display: none;">
 		<form action="?action=activate-user" method="post">
 			<input type="radio" value="0" name="activate">Activate<div style="clear: both;"></div>
 			<input type="radio" value="2" name="activate"> Cancel<br>
-			<input type="hidden" name="id" value="<? echo $user->ID; ?>">
+			<input type="hidden" name="id" value="<?php echo $user->ID; ?>">
 			<input type="submit" value="Confirm">
 		</form>
 	</div>
-	<?
+	<?php
 	echo "</tr>";
 	}
 				
@@ -93,17 +93,17 @@ $user_activated_mu = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}signups WH
 			echo $display_name['field_1'];
 			echo "</td>"; 
 	?>
-	<? $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
-	<td width="100"><img src="<? echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activatorMU<? echo $userMU->user_login; ?>');"><br>
-	<div id="activatorMU<? echo $userMU->user_login; ?>" style="display: none;">
+	<?php $plugin_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)); ?>
+	<td width="100"><img src="<?php echo $plugin_path; ?>activate.png" style="cursor: pointer;" onclick="javascript: expandCollapse('activatorMU<?php echo $userMU->user_login; ?>');"><br>
+	<div id="activatorMU<?php echo $userMU->user_login; ?>" style="display: none;">
 		<form action="?action=activate-user" method="post">
   	 		<input type="radio" value="1" name="activateMU">Activate<div style="clear: both;"></div>
   	 		<input type="radio" value="0" name="activateMU"> Cancel<br>			
-			<input type="hidden" name="user_login" value="<? echo $userMU->user_login; ?>">
+			<input type="hidden" name="user_login" value="<?php echo $userMU->user_login; ?>">
 			<input type="submit" value="Confirm">
 		</form>
 	</div>
-	<?
+	<?php
 	echo "</tr>";
 	}
 echo '</tbody></table>';
